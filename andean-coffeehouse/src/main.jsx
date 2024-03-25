@@ -1,10 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import App from './App'
+import About from './pages/About.jsx'
+import Menu from './pages/Menu.jsx'
+import Locations from './pages/Locations.jsx'
+import Blog from './pages/Blog.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route index={true} path="/" element={<App />} />
+      <Route index={true} path="/about" element={<About />} />
+      <Route index={true} path="/menu" element={<Menu />} />
+      <Route index={true} path="/blog" element={<Locations />} />
+      <Route index={true} path="/locations" element={<Blog />} />
+    </Routes>
+  </BrowserRouter>
 )
