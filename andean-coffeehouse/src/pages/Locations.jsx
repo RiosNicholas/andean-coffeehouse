@@ -1,9 +1,14 @@
 import Nav from "../components/Nav";
+import Location from "../components/Location";
 
 const Locations = () => {
     return (
         <>
-            <Nav/>
+            <Nav />
+            {/* <Location
+                city='Elizabeth'
+                state='New Jersey'
+            /> */}
         </>
     );
 }
