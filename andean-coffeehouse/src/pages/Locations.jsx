@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Location from "../components/Location";
+import Footer from "../components/Footer";
 
 const Locations = () => {
     return (
@@ -9,6 +10,7 @@ const Locations = () => {
                 city='Elizabeth'
                 state='New Jersey'
             /> */}
+            <Footer />
         </>
     );
 }

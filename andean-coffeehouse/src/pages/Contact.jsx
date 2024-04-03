@@ -1,4 +1,5 @@
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
 const Contact = () => {
@@ -11,6 +12,7 @@ const Contact = () => {
                 className="w-screen object-cover h-64 md:max-h-80"
             />
             <ContactForm />
+            <Footer />
         </>
     );
 }
