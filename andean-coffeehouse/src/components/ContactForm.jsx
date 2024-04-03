@@ -1,6 +1,6 @@
 const ContactForm = () => {
     return (
-        <form className="w-full my-8 p-16 bg-yellow-50">
+        <form className="w-full px-16 py-24 bg-gray-100 shadow">
             <div className="flex">
                 <div className="m-2">
                     <label 
@@ -12,7 +12,7 @@ const ContactForm = () => {
                         type="text" 
                         id="name" 
                         name="name" 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-700 text-black bg-white leading-tight focus:outline-none focus:shadow-outline" 
+                        className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-600 text-black bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-2" 
                         placeholder="Enter your name" 
                     />
                 </div>
@@ -26,7 +26,7 @@ const ContactForm = () => {
                         type="email" 
                         id="email" 
                         name="email" 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-700 bg-white text-black leading-tight focus:outline-none focus:shadow-outline" 
+                        className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-600 text-black bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-2" 
                         placeholder="Enter your email" 
                     />
                 </div>
