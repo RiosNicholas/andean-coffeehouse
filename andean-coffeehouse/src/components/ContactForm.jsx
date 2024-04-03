@@ -1,4 +1,44 @@
+import { useState } from "react";
+
 const ContactForm = () => {
+    const [formData, setFormData] = useState({name: '', email: '', message: ''});
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        fetch('/contact_form.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Email sent successfully');
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            } else {
+                console.error('Failed to send email');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    };
+
+
     return (
         <form className="w-full px-16 py-24 bg-gray-100 shadow">
             <div className="flex">
