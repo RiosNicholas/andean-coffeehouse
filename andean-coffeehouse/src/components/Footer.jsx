@@ -5,6 +5,7 @@ const Footer = () => {
                 Nicholas Rios | 2024
             </a>
         </footer>
+
     );
 }
 
