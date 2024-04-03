@@ -6,10 +6,12 @@ const Locations = () => {
     return (
         <>
             <Nav />
-            {/* <Location
-                city='Elizabeth'
+            <Location 
+                city='Elizabeth' 
                 state='New Jersey'
-            /> */}
+                address='123 ABC Street'
+                phoneNumber='911'
+            />
             <Footer />
         </>
     );
