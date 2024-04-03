@@ -3,6 +3,7 @@ import './App.css'
 import Hero from './components/Hero'
 import Nav from './components/Nav'
 import Location from './components/Location'
+import ContactForm from './components/ContactForm'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         address='123 ABC Street'
         phoneNumber='911'
       />
+      <ContactForm />
     </>
   )
 }
