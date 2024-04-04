@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS andean_coffeeshop_db;
 
 CREATE TABLE Customer (
-    customer_id INT PRIMARY KEY,
+    customer_id INT AUTO_INCREMENT,
     customer_name VARCHAR(300),
     customer_phone VARCHAR(15),
     customer_email VARCHAR(300),
