@@ -40,9 +40,9 @@ const ContactForm = () => {
 
 
     return (
-        <form className="w-full px-16 py-24 bg-gray-100 shadow">
-            <div className="flex">
-                <div className="m-2">
+        <form className="w-full px-16 lg:px-32 py-24 bg-gray-100 shadow">
+            <div className="flex w-full">
+                <div className="m-2 w-1/2">
                     <label 
                         htmlFor="name" 
                         className="block text-black text-lg font-medium mb-1">
@@ -56,7 +56,7 @@ const ContactForm = () => {
                         placeholder="Enter your name" 
                     />
                 </div>
-                <div className="m-2">
+                <div className="m-2 w-1/2">
                     <label 
                         htmlFor="email" 
                         className="block text-black text-lg font-medium mb-1">
