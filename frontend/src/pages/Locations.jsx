@@ -12,6 +12,7 @@ const Locations = () => {
                 className="w-screen object-cover h-64 md:max-h-80 shadow"
                 aria-placeholder="Inside a coffee shop"
             />
+            <h1 className="mx-10 my-4 text-3xl font-extrabold uppercase">Locations</h1>
             <main className="grid md:grid-cols-2">
                 <Location 
                     city='Elizabeth' 

@@ -11,6 +11,7 @@ const Menu = () => {
                 className="w-screen object-cover h-64 md:max-h-80 shadow"
                 aria-placeholder="Menus on the wall at a coffee shop"
             />
+            <h1 className="mx-10 my-4 text-3xl font-extrabold uppercase">Menu</h1>
             <Footer />
         </>
     );

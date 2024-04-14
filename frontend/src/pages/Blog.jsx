@@ -11,6 +11,7 @@ const Blog = () => {
                 className="w-screen object-cover h-64 md:max-h-80 shadow"
                 aria-placeholder="A coffee shop"
             />
+            <h1 className="mx-10 my-4 text-3xl font-extrabold uppercase">Our Story</h1>
             <Footer/>
         </>
     );

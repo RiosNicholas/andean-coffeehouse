@@ -1,5 +1,4 @@
 import { useState } from "react";
-import phpScript from '../../../backend/api/contact_form.php';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
@@ -42,6 +41,7 @@ const ContactForm = () => {
 
     return (
         <form className="w-full px-16 lg:px-32 py-24 bg-gray-100 shadow">
+            <h1 className="mb-4 text-3xl font-extrabold uppercase text-black">Contact Us</h1>
             <div className="flex w-full">
                 <div className="m-2 w-1/2">
                     <label 
