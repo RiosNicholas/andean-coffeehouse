@@ -31,7 +31,7 @@ CREATE TABLE Emails (
     email_id INT PRIMARY KEY AUTO_INCREMENT,
     contact_name VARCHAR(200),
     contact_email VARCHAR(200),
-    message TEXT,
+    contact_message TEXT,
     date_sent DATE
 );
 
