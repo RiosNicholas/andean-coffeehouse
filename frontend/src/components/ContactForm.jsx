@@ -1,4 +1,5 @@
 import { useState } from "react";
+import phpScript from '../../../backend/api/contact_form.php';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
@@ -52,6 +53,8 @@ const ContactForm = () => {
                         type="text" 
                         id="name" 
                         name="name" 
+                        value={formData.name}
+                        onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-600 text-black bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-2" 
                         placeholder="Enter your name" 
                     />
@@ -66,6 +69,8 @@ const ContactForm = () => {
                         type="email" 
                         id="email" 
                         name="email" 
+                        value={formData.email}
+                        onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 border-gray-600 text-black bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-2" 
                         placeholder="Enter your email" 
                     />
@@ -80,6 +85,8 @@ const ContactForm = () => {
                 <textarea 
                     id="message" 
                     name="message" 
+                    value={formData.message}
+                    onChange={handleChange}
                     rows="4" 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-black bg-white border-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     placeholder="Enter your message">
