@@ -2,8 +2,9 @@
 Database Design & Management Project | Spring 2024
 
 ## Tech Stack 
-- React
+- React (JavaScript)
 - Tailwind CSS
 - PHP
 - MariaDB (MySQL)
+- XAMPP
 
