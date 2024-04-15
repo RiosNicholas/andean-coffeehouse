@@ -19,7 +19,7 @@ CREATE TABLE Coffee (
     roast ENUM('Light', 'Medium', 'Dark')
 );
 
-CREATE TABLE Order (
+CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
     customer_id INT,
     date_purchased DATE,
