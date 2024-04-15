@@ -14,7 +14,7 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('/contact_form.php', {
+        fetch('/index.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const ContactForm = () => {
 
 
     return (
-        <form className="w-full px-16 lg:px-32 py-24 bg-gray-100 shadow">
+        <form className="w-full px-16 lg:px-32 py-8 bg-gray-100 shadow ">
             <h1 className="mb-4 text-3xl font-extrabold uppercase text-black">Contact Us</h1>
             <div className="flex w-full">
                 <div className="m-2 w-1/2">

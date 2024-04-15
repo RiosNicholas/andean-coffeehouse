@@ -5,7 +5,7 @@ import coverImage from "../assets/pexels-chevanon-photography-302899.jpg"
 
 const Contact = () => {
     return (
-        <>
+        <div className="bg-[#5d4037]">
             <Nav/>
             <img 
                 src={coverImage}
@@ -14,7 +14,7 @@ const Contact = () => {
             />
             <ContactForm />
             <Footer />
-        </>
+        </div>
     );
 }
 
