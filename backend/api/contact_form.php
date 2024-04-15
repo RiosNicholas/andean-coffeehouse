@@ -28,10 +28,10 @@ try {
         // Execute the statement
         if ($stmt->execute()) {
             http_response_code(200);
-            echo json_encode(array("message" => "Data inserted successfully"));
+            echo json_encode(array("message" => "Email sent successfully"));
         } else {
             http_response_code(500);
-            echo json_encode(array("message" => "Failed to insert data"));
+            echo json_encode(array("message" => "Failed to send email"));
         }
     } else {
         http_response_code(405);
