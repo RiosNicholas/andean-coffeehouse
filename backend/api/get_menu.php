@@ -1,6 +1,8 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Origin: http://localhost:5173');
 header('Content-Type: application/json');
+require __DIR__ . '/vendor/autoload.php';
 
 // Include setup file
 require_once 'index.php';

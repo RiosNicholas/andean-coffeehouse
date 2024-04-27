@@ -1,6 +1,11 @@
 <?php
 header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Origin: http://localhost:5173');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header('Content-Type: application/json');
+require __DIR__ . '/vendor/autoload.php';
+
 
 // API methods
 require_once 'get_menu.php';
@@ -32,6 +37,7 @@ $dbConnect = new mysqli($servername, $db_username, $db_password, $db_name);
 if (mysqli_connect_errno()) {
     echo "Error: Unable to connect to database.";
     exit;
+}
 // Check connection
 if ($dbConnect->connect_error) {
     http_response_code(500);
