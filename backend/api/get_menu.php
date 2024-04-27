@@ -1,6 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:3000');
-header('Access-Control-Allow-Origin: http://localhost:5173');
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 require __DIR__ . '/vendor/autoload.php';
 
@@ -39,7 +38,6 @@ while ($info = mysqli_fetch_assoc($data)) {
     
     $menuItems[] = $menuItem;
 }
-
 
 // Outputting JSON
 echo json_encode($menuItems);
