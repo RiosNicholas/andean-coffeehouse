@@ -1,9 +1,9 @@
 <?php
-// Fetching credentials using environment variables
-$db_username = getenv('DB_USERNAME');
-$db_password = getenv('DB_PASSWORD');
-$db_name = getenv('DB_NAME');
-$servername = getenv('SERVER_NAME');
+header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json');
+
+// Include setup file
+require_once 'index.php';
 
 // Check if environment variables are set
 if ($db_username === false || $db_password === false || $db_name === false || $servername === false) {
@@ -40,6 +40,5 @@ while ($info = mysqli_fetch_assoc($data)) {
 
 
 // Outputting JSON
-header('Content-Type: application/json');
 echo json_encode($menuItems);
 ?>
