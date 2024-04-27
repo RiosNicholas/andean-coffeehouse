@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS andean_coffeeshop_db;
+CREATE DATABASE IF NOT EXISTS andean_coffeehouse_db;
 
 CREATE TABLE Customer (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
