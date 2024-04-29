@@ -5,7 +5,7 @@
         private $db_password;
         private $db_name;
         private $servername;
-
+        
         public function __construct() {
             $this->db_username = getenv('DB_USERNAME');
             $this->db_password = getenv('DB_PASSWORD');
@@ -14,6 +14,13 @@
         }
 
         public function connect() {
+            // Checking if environment variables are set
+            if ($db_username === false || $db_password === false || $db_name === false || $servername === false) {
+                echo "Error: Environment variables are not configured.";
+                exit;
+            }
+            
+            // Attemping database connection
             try {
                 $conn = new PDO('mysql:host=' . $this->servername . ';dbname=' . $this->db_name, $this->db_username, $this->db_password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
