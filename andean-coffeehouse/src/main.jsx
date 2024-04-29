@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import App from './App'
 import About from './pages/About.jsx'
 import Menu from './pages/Menu.jsx'
