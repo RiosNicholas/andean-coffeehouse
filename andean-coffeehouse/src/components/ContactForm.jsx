@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({name: '', email: '', message: ''});
-    const navigate = useNavigate();
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
     const handleChange = (event) => {
         setFormData({
@@ -13,14 +11,19 @@ const ContactForm = () => {
         });
     };
 
-    const handleSubmit = (event) => {
-        axios.post('http://localhost:8888/api/user/save', inputs).then(function(response){
-            console.log(response.data);
-            navigate('/');
-        });
-    };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-
+        try {
+            await axios.post('http://localhost:80/api/emails/save', formData);
+            console.log("Form data submitted successfully:", formData);
+            
+            // Resetting form data after successful submission
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error("Error submitting form data:", error);
+        }
+    }
     return (
         <form onSubmit={handleSubmit} className="w-full px-16 lg:px-32 py-8 bg-gray-100 shadow">
             <h1 className="mb-4 text-3xl font-extrabold uppercase text-black">Contact Us</h1>
