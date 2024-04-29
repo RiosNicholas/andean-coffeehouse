@@ -1,25 +1,15 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
-header('Content-Type: application/json');
-
-require __DIR__ . '/vendor/autoload.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *");
 
 
 // API methods
 require_once 'get_menu.php';
 
 // Fetching environment variables
-$dotenvPath = __DIR__ . '/../../frontend/.env';
-if (!file_exists($dotenvPath)) {
-    echo "Error: .env file not found.";
-    exit;
-}
-
-$dotenv = Dotenv\Dotenv::createImmutable(dirname($dotenvPath));
-$dotenv->load();
-
 $db_username = getenv('DB_USERNAME');
 $db_password = getenv('DB_PASSWORD');
 $db_name = getenv('DB_NAME');
