@@ -22,7 +22,7 @@ if ($db_username === false || $db_password === false || $db_name === false || $s
     exit;
 }
 
-// Connecting to MariaDB
+// Connecting to MariaDB/MySQL
 $dbConnect = new mysqli($servername, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
