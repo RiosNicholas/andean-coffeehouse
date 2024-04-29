@@ -12,7 +12,7 @@ const Menu = () => {
     useEffect(() => {
         const fetchMenuItems = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/api/get_menu.php");
+                const response = await axios.get("http://localhost:3310/api/get_menu.php");
                 setMenuItems(response.data);
             } catch (error) {
                 setError("Failed to fetch menu items");
