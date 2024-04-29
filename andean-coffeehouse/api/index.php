@@ -8,6 +8,7 @@ header("Access-Control-Allow-Methods: *");
 
 // API methods
 require_once 'get_menu.php';
+require_once 'post_email.php';
 
 // Fetching environment variables
 $db_username = getenv('DB_USERNAME');
@@ -35,5 +36,5 @@ if ($dbConnect->connect_error) {
     exit();
 }
 
-$conn->close();
+// $conn->close();
 ?>

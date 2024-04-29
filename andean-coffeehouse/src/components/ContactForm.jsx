@@ -1,46 +1,28 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({name: '', email: '', message: ''});
+    const navigate = useNavigate();
 
-    const handleChange = (e) => {
+    const handleChange = (event) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [event.target.name]: event.target.value
         });
     };
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        fetch('/index.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Email sent successfully');
-                setFormData({
-                    name: '',
-                    email: '',
-                    message: ''
-                });
-            } else {
-                console.error('Failed to send email');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    const handleSubmit = (event) => {
+        axios.post('http://localhost:8888/api/user/save', inputs).then(function(response){
+            console.log(response.data);
+            navigate('/');
         });
     };
 
 
     return (
-        <form className="w-full px-16 lg:px-32 py-8 bg-gray-100 shadow ">
+        <form onSubmit={handleSubmit} className="w-full px-16 lg:px-32 py-8 bg-gray-100 shadow">
             <h1 className="mb-4 text-3xl font-extrabold uppercase text-black">Contact Us</h1>
             <div className="flex w-full">
                 <div className="m-2 w-1/2">
@@ -94,6 +76,7 @@ const ContactForm = () => {
             </div>
             <div className="flex items-center justify-center mt-6">
                 <button 
+                    onSubmit={handleSubmit}
                     type="submit" 
                     className="bg-gray-500 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline">
                     Send
