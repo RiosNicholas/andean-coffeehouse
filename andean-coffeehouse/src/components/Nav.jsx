@@ -15,7 +15,7 @@ const Nav = () => {
                     <Link to="/menu">Menu</Link>
                 </li>
                 <li className="mx-2 hover:underline hover:cursor-pointer">
-                    <Link to="/blog">Blog</Link>
+                    <Link to="/leaderboard">Leaderboard</Link>
                 </li>
                 <li className="mx-2 hover:underline hover:cursor-pointer">
                     <Link to="/locations">Locations</Link>
