@@ -1,21 +1,32 @@
-INSERT INTO Orders (customer_id, date_purchased, total_price) VALUES
-    (1, '2024-04-30', 25.50),
-    (2, '2024-04-28', 18.75),
-    (1, '2024-04-26', 32.00),
-    (3, '2024-04-25', 22.90),
-    (1, '2024-04-22', 15.75),
-    (2, '2024-04-20', 27.30),
-    (4, '2024-04-19', 40.25),
-    (5, '2024-04-18', 28.90),
-    (3, '2024-04-15', 35.50),
-    (1, '2024-04-14', 19.75),
-    (6, '2024-04-12', 23.40),
-    (7, '2024-04-10', 17.60),
-    (8, '2024-04-09', 29.80),
-    (9, '2024-04-08', 21.30),
-    (10, '2024-04-06', 36.20),
-    (1, '2024-04-05', 18.45),
-    (2, '2024-04-03', 31.75),
-    (1, '2024-04-02', 24.90),
-    (3, '2024-04-01', 19.25),
-    (1, '2024-03-30', 28.70);
+INSERT INTO Orders (customer_id, date_purchased, total_price, is_member)
+SELECT 
+    customer_id,
+    date_purchased,
+    total_price,
+    CASE 
+        WHEN customer_id = 0 THEN 0 
+        ELSE 1 
+    END AS is_member
+FROM (
+    SELECT 1 AS customer_id, '2024-04-30' AS date_purchased, 25.50 AS total_price UNION ALL
+    SELECT 2, '2024-04-28', 18.75 UNION ALL
+    SELECT 1, '2024-04-26', 32.00 UNION ALL
+    SELECT 3, '2024-04-25', 22.90 UNION ALL
+    SELECT 1, '2024-04-22', 15.75 UNION ALL
+    SELECT 2, '2024-04-20', 27.30 UNION ALL
+    SELECT 4, '2024-04-19', 40.25 UNION ALL
+    SELECT 5, '2024-04-18', 28.90 UNION ALL
+    SELECT 3, '2024-04-15', 35.50 UNION ALL
+    SELECT 1, '2024-04-14', 19.75 UNION ALL
+    SELECT 6, '2024-04-12', 23.40 UNION ALL
+    SELECT 7, '2024-04-10', 17.60 UNION ALL
+    SELECT 8, '2024-04-09', 29.80 UNION ALL
+    SELECT 9, '2024-04-08', 21.30 UNION ALL
+    SELECT 10, '2024-04-06', 36.20 UNION ALL
+    SELECT 1, '2024-04-05', 18.45 UNION ALL
+    SELECT 0,'2024-04-05', 18.45 UNION ALL 
+    SELECT 2, '2024-04-03', 31.75 UNION ALL
+    SELECT 1, '2024-04-02', 24.90 UNION ALL
+    SELECT 3, '2024-04-01', 19.25 UNION ALL
+    SELECT 1, '2024-03-30', 28.70
+) AS o;
