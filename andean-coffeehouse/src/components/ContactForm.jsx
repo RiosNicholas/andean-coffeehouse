@@ -3,6 +3,7 @@ import axios from "axios";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [error, setError] = useState(null);
 
     const handleChange = (event) => {
         setFormData({
@@ -15,18 +16,22 @@ const ContactForm = () => {
         event.preventDefault();
 
         try {
-            await axios.post('http://localhost:80/api/emails/save', formData);
-            console.log("Form data submitted successfully:", formData);
-            
+            const response = await axios.post('http://localhost/api/index.php', formData);
+            console.log("Form data submitted successfully:", response.data);
+            alert('Form data submitted successfully');
+
             // Resetting form data after successful submission
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
             console.error("Error submitting form data:", error);
+            setError("Failed to submit form data");
         }
-    }
+    };
+
     return (
         <form onSubmit={handleSubmit} className="w-full px-16 lg:px-32 py-8 bg-gray-100 shadow">
             <h1 className="mb-4 text-3xl font-extrabold uppercase text-black">Contact Us</h1>
+            {error && <div className="text-red-600">{error}</div>}
             <div className="flex w-full">
                 <div className="m-2 w-1/2">
                     <label 
