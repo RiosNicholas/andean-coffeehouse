@@ -63,6 +63,32 @@ class CoffeeDAO {
             return ['error' => 'Unable to select data'];
         }
     }
+  
+    public function getCustomerLeaderboard() {
+        $leaderboard = [];
+    
+        $result = mysqli_query($this->conn, "
+            SELECT c.customer_id, c.customer_name, COUNT(o.order_id) AS orders, 
+            MIN(o.date_purchased) AS first_purchase_date FROM Customer c 
+            LEFT JOIN Orders o ON c.customer_id = o.customer_id WHERE c.customer_id != 0 
+            GROUP BY c.customer_id ORDER BY orders DESC, first_purchase_date ASC LIMIT 10
+        ");
+        if ($result) {
+            while ($info = mysqli_fetch_assoc($result)) {
+                $customer = [
+                    'customer_id' => $info['customer_id'],
+                    'customer_name' => $info['customer_name'],
+                    'orders' => $info['orders'], // Corrected key name to 'orders'
+                    'first_purchase_date' => $info['first_purchase_date']
+                ];
+                $leaderboard[] = $customer;
+            }
+            return $leaderboard;
+        } else {
+            return ['error' => 'Unable to select data'];
+        }
+    }
+    
 
     public function insertEmail($contact_name, $contact_email, $contact_message, $date_sent) {
         $stmt = $this->conn->prepare("INSERT INTO Emails(contact_name, contact_email, contact_message, date_sent) VALUES(?, ?, ?, ?)");
@@ -90,6 +116,9 @@ switch ($method) {
         if (isset($_GET['locations'])) {
             $locations = $coffeeDAO->getAllLocations();
             echo json_encode($locations);
+        } elseif (isset($_GET['leaderboard'])) {
+            $leaderboard = $coffeeDAO->getCustomerLeaderboard();
+            echo json_encode($leaderboard);
         } else {
             $menuItems = $coffeeDAO->getAllMenuItems();
             echo json_encode($menuItems);
