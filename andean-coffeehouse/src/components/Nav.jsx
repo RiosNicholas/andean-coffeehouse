@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <nav className="flex p-5 bg-yellow-50 text-gray-900 justify-between sticky top-0">
             <label className="font-extrabold mx-5">Andean Coffeehouse</label>
-            <ul className="list-none flex font-light mx-5">
+            <ul className="list-none flex font-light mx-5 text-center">
                 <li className="px-2 hover:underline hover:cursor-pointer">
                     <Link to="/">Home</Link>    
                 </li>

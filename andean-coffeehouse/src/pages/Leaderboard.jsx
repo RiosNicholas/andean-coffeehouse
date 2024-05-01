@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import coverImage from "../assets/pexels-afta-putta-gunawan-683039.jpg"
 
-const Blog = () => {
+const Leaderboard = () => {
     return (
         <>
             <Nav/>
