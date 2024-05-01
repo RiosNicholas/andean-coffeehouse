@@ -28,10 +28,14 @@
 3. Run the provided SQL queries in the `/queries` directory into your MariaDB/MySQL server in PHPMyAdmin.
 
 ### Project Structure
-- api/: Contains the PHP files responsible for handling backend logic and serving API endpoints.
-- queries/: Contains the SQL queries required to replicate the project.
-- src/: Holds the React components/logic for the frontend and houses the static assets like images accessible to the frontend.
-- tailwind.config.js: Configuration file for Tailwind CSS.
+- api/: 
+    Contains the PHP files responsible for handling backend logic and serving API endpoints.
+- queries/: 
+    Contains the SQL queries required to replicate the project.
+- src/: 
+    Holds the React components/logic for the frontend and houses the static assets like images accessible to the frontend.
+- tailwind.config.js: 
+    Configuration file for Tailwind CSS.
 
 ### Video Walkthrough
 <img src='2024-05-01 17-34-14.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
