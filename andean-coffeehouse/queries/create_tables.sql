@@ -35,3 +35,10 @@ CREATE TABLE Emails (
     date_sent DATE
 );
 
+CREATE TABLE Location (
+    location_id INT AUTO_INCREMENT PRIMARY KEY,
+    city VARCHAR(100),
+    state VARCHAR(100),
+    address VARCHAR(255),
+    phoneNumber VARCHAR(20)
+);
