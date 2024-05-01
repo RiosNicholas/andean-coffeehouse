@@ -1,7 +1,11 @@
 INSERT INTO Customer (customer_name, customer_phone, customer_email, is_member) VALUES
-    ('Nicholas Rios', '111-111-1111', 'nicholas.rios@rutgers.edu', 1),
-    ('John Doe', '777-777-7777', 'john.doe@rutgers.edu', 1),
-    ('Jane Doe', '888-888-8888', 'jane.doe@rutgers.edu', 0),
-    ('Emily Johnson', '222-222-2222', 'emily.johnson@rutgers.edu', 0),
-    ('Michael Smith', '333-333-3333', 'michael.smith@rutgers.edu', 1),
-    ('Sophia Rodriguez', '444-444-4444', 'sophia.rodriguez@rutgers.edu', 0);
+    ('Lionel Messi', '111-111-1111', 'lionel.messi@rutgers.edu', 1),
+    ('Cristiano Ronaldo', '777-777-7777', 'cristiano.ronaldo@rutgers.edu', 1),
+    ('Neymar Jr.', '888-888-8888', 'neymar.jr@rutgers.edu', 0),
+    ('Robert Lewandowski', '222-222-2222', 'robert.lewandowski@rutgers.edu', 0),
+    ('Kylian Mbappe', '333-333-3333', 'kylian.mbappe@rutgers.edu', 1),
+    ('Mo Salah', '444-444-4444', 'mohamed.salah@rutgers.edu', 0),
+    ('Sergio Ramos', '555-555-5555', 'sergio.ramos@rutgers.edu', 1),
+    ('Kevin De Bruyne', '666-666-6666', 'kevin.debruyne@rutgers.edu', 0),
+    ('Harry Kane', '777-777-7777', 'harry.kane@rutgers.edu', 1),
+    ('Luis Suarez', '888-888-8888', 'luis.suarez@rutgers.edu', 0);
