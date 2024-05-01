@@ -20,7 +20,7 @@ CREATE TABLE Coffee (
 );
 
 CREATE TABLE Orders (
-    order_id INT PRIMARY KEY,
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     date_purchased DATE,
     total_price DECIMAL(10, 2),
