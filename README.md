@@ -9,10 +9,10 @@
 - XAMPP
 
 ## Setup
-### Prerequisites
-- XAMPP
-- MariaDB/MySQL
-- npm 
+### Prerequisite Installations
+- **XAMPP**
+- **MariaDB/MySQL**
+- **npm**
 
 ### Frontend
 1. Navigate to project folder `cd andean-coffeehouse`
