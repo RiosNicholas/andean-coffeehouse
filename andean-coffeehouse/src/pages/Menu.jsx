@@ -23,8 +23,6 @@ const Menu = () => {
         fetchMenuItems();
     }, []);
 
-    
-
     if (!Array.isArray(menuItems)) {
         console.error("menuItems is not an array:", menuItems);
         return null; 
