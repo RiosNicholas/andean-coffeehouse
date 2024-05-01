@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import MenuItem from "../components/MenuItem";
 import coverImage from "../assets/pexels-lisa-fotios-1855214.jpg"
 
 const Menu = () => {
@@ -38,21 +39,23 @@ const Menu = () => {
                 aria-placeholder="Menus on the wall at a coffee shop"
             />
             <h1 className="mx-10 my-4 text-3xl font-extrabold uppercase">Menu</h1>
-            <div>
+            <div className="flex justify-center items-center">
                 {error && <p>{error}</p>}
-                <ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {menuItems.map((item, index) => (
-                        <li key={index}>
-                            <p>{item.product_name}</p>
-                            <p>{item.flavor_description}</p>
-                            <p>{item.unit_price}</p>
-                            <p>{item.origin}</p>
-                            <p>{item.drink_type}</p>
-                            <p>{item.bean_type}</p>
-                            <p>{item.roast}</p>
-                        </li>
+                        <MenuItem
+                            key={index}
+                            product_name={item.product_name}
+                            flavor_description={item.flavor_description}
+                            unit_price={item.unit_price}
+                            origin={item.origin}
+                            drink_type={item.drink_type}
+                            bean_type={item.bean_type}
+                            roast={item.roast}
+                        />
                     ))}
-                </ul>
+                  
+                </div>
             </div>
           
             <Footer />
