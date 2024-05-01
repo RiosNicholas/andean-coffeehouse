@@ -43,19 +43,38 @@ class CoffeeDAO {
         }
     }
 
-    public function postEmail($contact_name, $contact_email, $contact_message) {
-        $date_sent = date('Y-m-d H:i:s');
+    public function getAllLocations() {
+        $locations = [];
+    
+        $result = mysqli_query($this->conn, "SELECT * FROM Location");
+        if ($result) {
+            while ($info = mysqli_fetch_assoc($result)) {
+                $location = [
+                    'location_id' => $info['location_id'],
+                    'city' => $info['city'],
+                    'state' => $info['state'],
+                    'address' => $info['address'],
+                    'phoneNumber' => $info['phoneNumber']
+                ];
+                $locations[] = $location;
+            }
+            return $locations;
+        } else {
+            return ['error' => 'Unable to select data'];
+        }
+    }
 
+    public function insertEmail($contact_name, $contact_email, $contact_message, $date_sent) {
         $stmt = $this->conn->prepare("INSERT INTO Emails(contact_name, contact_email, contact_message, date_sent) VALUES(?, ?, ?, ?)");
         $stmt->bind_param('ssss', $contact_name, $contact_email, $contact_message, $date_sent);
-
+    
         if ($stmt->execute()) {
             return ['status' => 1, "message" => "Data inserted successfully"];
         } else {
             return ['status' => 0, "error" => "Error inserting data"];
         }
     }
-
+     
     public function __destruct() {
         if ($this->conn) {
             $this->conn->close();
@@ -68,13 +87,19 @@ $coffeeDAO = new CoffeeDAO();
 $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
     case "GET":
-        $menuItems = $coffeeDAO->getAllMenuItems();
-        echo json_encode($menuItems);
+        if (isset($_GET['locations'])) {
+            $locations = $coffeeDAO->getAllLocations();
+            echo json_encode($locations);
+        } else {
+            $menuItems = $coffeeDAO->getAllMenuItems();
+            echo json_encode($menuItems);
+        }
         break;
     case "POST":
         $data = json_decode(file_get_contents("php://input"));
-        if (isset($data->contact_name, $data->contact_email, $data->contact_message)) {
-            $result = $coffeeDAO->postEmail($data->contact_name, $data->contact_email, $data->contact_message);
+        if (isset($data->name, $data->email, $data->message)) {
+            $date_sent = date('Y-m-d H:i:s'); // Getting the current date and time
+            $result = $coffeeDAO->insertEmail($data->name, $data->email, $data->message, $date_sent);
             echo json_encode($result);
         } else {
             echo json_encode(['status' => 0, "error" => "Missing required fields"]);
