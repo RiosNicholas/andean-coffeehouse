@@ -1,3 +1,5 @@
+INSERT INTO Customer (customer_id, customer_name, is_member) VALUES (0, 'Unregistered Customer', 0);
+
 INSERT INTO Customer (customer_name, customer_phone, customer_email, is_member) VALUES
     ('Lionel Messi', '111-111-1111', 'lionel.messi@rutgers.edu', 1),
     ('Cristiano Ronaldo', '777-777-7777', 'cristiano.ronaldo@rutgers.edu', 1),
