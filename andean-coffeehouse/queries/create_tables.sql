@@ -24,6 +24,7 @@ CREATE TABLE Orders (
     customer_id INT,
     date_purchased DATE,
     total_price DECIMAL(10, 2),
+    is_member TINYINT(1),
     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
