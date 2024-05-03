@@ -24,18 +24,22 @@
 ### Backend & Database
 1. Navigate to your XAMPP installation directory and start the Apache and MySQL services.
 2. Clone the `/api` directory into the htdocs directory of your XAMPP installation.
-3. Navigate to *https://localhost/phpmyadmin/* in your web browser as the root user.
+3. Navigate to **https://localhost/phpmyadmin/** in your web browser and as the root user.
 3. Run the provided SQL queries in the `/queries` directory into your MariaDB/MySQL server in PHPMyAdmin.
 
 ### Project Structure
-- api/: 
-    Contains the PHP files responsible for handling backend logic and serving API endpoints.
+- api/:
+   
+        Contains the PHP files responsible for handling backend logic and serving API endpoints.
 - queries/: 
-    Contains the SQL queries required to replicate the project.
+
+        Contains the SQL queries required to replicate the project.
 - src/: 
-    Holds the React components/logic for the frontend and houses the static assets like images accessible to the frontend.
+
+        Holds the React components/logic for the frontend and houses the static assets like images accessible to the frontend.
 - tailwind.config.js: 
-    Configuration file for Tailwind CSS.
+
+        Configuration file for Tailwind CSS.
 
 ### Video Walkthrough
 <img src='2024-05-01 17-34-14.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
